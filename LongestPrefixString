@@ -1,0 +1,31 @@
+package com.siva.test;
+
+public class LongestPrefixString {
+
+	public static void main(String[] args) {
+		 
+		 // --------- Input ----------------------------     Largest Prefix String -------
+		String[] input = { "flower", "flow", "flight" };   //  -- f1
+		// String[] input = { "abcdef", "abc2", "abc" };       -- abc   
+		//String[] input = { "leetcode", "leet", "leader" };     -- le
+		//String[] input = { "flower", "leet", "abcdef" };     -- No common prefix String found
+		LongestPrefixString.longestPrefixString(input);
+	}
+
+	static void longestPrefixString(String[] inputStr) {
+
+		String largestPrefixStr = inputStr[0];
+		for (int i = 1; i < inputStr.length; i++) {
+			while (inputStr[i].indexOf(largestPrefixStr) == -1) {
+				largestPrefixStr = largestPrefixStr.substring(0, largestPrefixStr.length() - 1);
+				if (largestPrefixStr.isEmpty()) {
+					System.out.println("No common prefix String found");
+					return;
+				}
+
+			}
+		}
+		System.out.println(largestPrefixStr);
+	}
+
+}
