@@ -1,48 +1,36 @@
-package com.siva.test;
+package com.siva.codepractise;
 
 import java.util.HashSet;
 import java.util.Set;
 
 public class Anagram {
 
-	public static void main(String[] args) {
+	public Anagram() {
 
-		String input1 = "Astronomer";
-		String input2 = "Moon Starer"; // - true
-		
-		// String input1 = "Clint Eastwood"; 
-		//String input2 = "old west action"; //--true
-		
-		// String input1 = "river";
-		//String input2 = "ocean"; //- false
-
-		boolean isAnagram = Anagram.isAnagram(input1, input2);
-		System.out.println(isAnagram);
 	}
 
-	static boolean isAnagram(String inputStr1, String inputStr2) {
-		inputStr1 = inputStr1.toUpperCase().replaceAll("\\s", "");
-		inputStr2 = inputStr2.toUpperCase().replaceAll("\\s", "");
+	public boolean isAnagram(String inputStr1, String inputStr2) {
+		final String processedStr1 = inputStr1.toUpperCase().replaceAll("\\s", "");
+		final String processedStr2 = inputStr2.toUpperCase().replaceAll("\\s", "");
+		
+		if(processedStr1.length() != processedStr1.length()) return false;
 
 		Set<Character> handler = new HashSet<Character>();
-		for (int i = 0; i < inputStr1.length(); i++) {
-			Character inputChar1 = inputStr1.charAt(i);
-			Character inputChar2 = inputStr2.charAt(i);
-
-			if (handler.contains(inputChar1)) {
-				handler.remove(inputChar1);
-			} else {
-				handler.add(inputChar1);
-			}
-
-			if (handler.contains(inputChar2)) {
-				handler.remove(inputChar2);
-			} else {
-				handler.add(inputChar2);
-			}
+		for (int i = 0; i < processedStr1.length(); i++) {
+			addOrRemoveCharacterFromHandler( handler, processedStr1.charAt(i), processedStr2.charAt(i));
 		}
 
 		return handler.isEmpty();
+	}
+
+	private void addOrRemoveCharacterFromHandler(final Set<Character> inHandler, final Character... inputChars) {
+		for (Character entity : inputChars) {
+			if (inHandler.contains(entity)) {
+				inHandler.remove(entity);
+			} else {
+				inHandler.add(entity);
+			}
+		}
 	}
 
 }
