@@ -1,0 +1,25 @@
+package come.siva.test;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
+import com.siva.codepractise.LongestPrefixString;
+
+public class LongestPrefixStringTest {
+
+	@Test
+	public void test() {
+		final LongestPrefixString longestPrefixString = new LongestPrefixString();
+
+		assertEquals("fl", longestPrefixString.longestPrefixString("flower", "flow", "flight"));
+
+		assertEquals("abc", longestPrefixString.longestPrefixString("abcdef", "abc2", "abc"));
+
+		assertEquals("le", longestPrefixString.longestPrefixString("leetcode", "leet", "leader"));
+
+		assertEquals(LongestPrefixString.EMPTY_STRING,
+				longestPrefixString.longestPrefixString("flower", "leet", "abcdef"));
+	}
+
+}
