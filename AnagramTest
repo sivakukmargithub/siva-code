@@ -1,0 +1,23 @@
+package come.siva.test;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+import com.siva.codepractise.Anagram;
+
+public class AnagramTest {
+
+	@Test
+	public void testAnagaram() {
+		
+		final Anagram anangram = new Anagram();
+
+		assertTrue(anangram.isAnagram("Astronomer", "Moon Starer"));
+
+		assertTrue(anangram.isAnagram("Clint Eastwood", "old west action"));
+
+		assertFalse(anangram.isAnagram("river", "ocean"));
+	}
+
+}
