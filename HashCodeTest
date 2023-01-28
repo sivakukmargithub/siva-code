@@ -1,0 +1,38 @@
+package com.siva.javalearning;
+
+import java.util.HashMap;
+
+/**
+ * Override of equals and hashCode
+ * 
+ * @author Siva
+ *
+ */
+
+public class HashCodeTest {
+
+	public String name;
+
+	public HashCodeTest(String name) {
+		this.name = name;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		return true;
+	}
+
+	@Override
+	public int hashCode() {
+		return 0;
+	}
+
+	public static void main(String[] args) {
+		HashMap<HashCodeTest, String> testHashMap = new HashMap<>();
+		testHashMap.put(new HashCodeTest("a"), "a");
+		testHashMap.put(new HashCodeTest("b"), "b");
+		System.out.println(testHashMap.get(new HashCodeTest("a")) + " " + testHashMap.get(new HashCodeTest("b")));
+		// output - b b
+	}
+
+}
