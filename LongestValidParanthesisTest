@@ -1,0 +1,19 @@
+package come.siva.test;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
+import com.siva.codepractise.LongestValidParanthesis;
+
+public class LongestValidParanthesisTest {
+	@Test
+	public void test() {
+		final LongestValidParanthesis longestValidParenthesis = new LongestValidParanthesis();
+
+		assertEquals(2, longestValidParenthesis.getUsingStack("()"));
+
+		assertEquals(6, longestValidParenthesis.getUsingStack("()(()))"));
+	}
+
+}
