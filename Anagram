@@ -3,6 +3,13 @@ package com.siva.codepractise;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+Given two input string check whether both are Anagram
+
+listen = silent
+players = parsely
+
+**/
 public class Anagram {
 
 	public Anagram() {
