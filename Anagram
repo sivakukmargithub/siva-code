@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
-Given two input string check whether both are Anagram
+Given two input strings check whether both are Anagram
 
 listen = silent
 players = parsely
@@ -17,6 +17,7 @@ public class Anagram {
 	}
 
 	public boolean isAnagram(String inputStr1, String inputStr2) {
+         	//Removes whitespaces and converts to upper case
 		final String processedStr1 = inputStr1.toUpperCase().replaceAll("\\s", "");
 		final String processedStr2 = inputStr2.toUpperCase().replaceAll("\\s", "");
 		
@@ -29,7 +30,8 @@ public class Anagram {
 
 		return handler.isEmpty();
 	}
-
+	
+        // Set Data structure is used solve the issue in linear time
 	private void addOrRemoveCharacterFromHandler(final Set<Character> inHandler, final Character... inputChars) {
 		for (Character entity : inputChars) {
 			if (inHandler.contains(entity)) {
