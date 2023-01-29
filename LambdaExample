@@ -1,0 +1,41 @@
+package com.siva.codepractise;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class LambdaExample {
+
+	public static void main(String[] args) {
+		printUsingForLoop();
+
+		printUsingLambdaForEach();
+
+	}
+
+	// using for loop for iterating a list
+	public static void printUsingForLoop() {
+
+		for (String string : getInputString()) {
+			System.out.println(string);
+		}
+	}
+
+	// using lambda expression forEach
+	public static void printUsingLambdaForEach() {
+		getInputString().stream().forEach((string) -> {
+			System.out.println(string);
+		});
+	}
+
+	public static List<String> getInputString() {
+		if (stringList == null) {
+			stringList = new ArrayList<>();
+			stringList.add("Hi");
+			stringList.add("there");
+		}
+		return stringList;
+	}
+
+	static List<String> stringList;
+
+}
