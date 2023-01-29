@@ -1,5 +1,8 @@
 package com.siva.codepractise;
-
+/**
+Return the longest prefix string common to the input string of arrays
+"abcd" , "abbd" ,"ab"  should return -> "ab" 
+**/
 public class LongestPrefixString {
 	public String longestPrefixString(String... inputStrings) {
 		String largestPrefixStr = inputStrings[0];
